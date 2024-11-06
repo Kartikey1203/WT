@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling with JavaScript</title>
+    <style>
+        /* Some simple styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #hover-box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            border: 2px solid #007acc;
+            text-align: center;
+            line-height: 200px;
+            margin-bottom: 20px;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // JavaScript function for handling button click event
+        function handleButtonClick() {
+            alert("Button clicked!");
+        }
+
+        // JavaScript function for handling form submission event
+        function handleFormSubmit(event) {
+            event.preventDefault();  // Prevent the form from submitting
+            const name = document.getElementById("name").value;
+            alert("Form submitted! Name: " + name);
+        }
+
+        // JavaScript function for handling mouse over event
+        function handleMouseOver() {
+            const box = document.getElementById("hover-box");
+            box.style.backgroundColor = "lightgreen";
+            box.innerHTML = "Mouse is over!";
+        }
+
+        // JavaScript function for handling mouse out event
+        function handleMouseOut() {
+            const box = document.getElementById("hover-box");
+            box.style.backgroundColor = "lightblue";
+            box.innerHTML = "Hover over me!";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Event Handling in JavaScript</h1>
+
+    <!-- Button click event -->
+    <h2>Button Click Event</h2>
+    <button onclick="handleButtonClick()">Click Me</button>
+
+    <!-- Form submission event -->
+    <h2>Form Submission Event</h2>
+    <form onsubmit="handleFormSubmit(event)">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Mouse over event -->
+    <h2>Mouse Over Event</h2>
+    <div id="hover-box" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">
+        Hover over me!
+    </div>
+
+    <!-- Output area for displaying results -->
+    <div id="output"></div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout in HTML with CSS</title>
+    <style>
+        /* Resetting default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header section */
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Flexbox layout for the main content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        /* Sidebar (Fixed width) */
+        .sidebar {
+            flex: 1 1 250px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-right: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Content area (Responsive width) */
+        .content {
+            flex: 3 1 600px;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Grid layout for content cards */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Individual content card */
+        .card {
+            background-color: #e6f7ff;
+            border: 1px solid #007acc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Responsive Layout with Flexbox and Grid</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>This is the sidebar area where you can add links or other content.</p>
+        </aside>
+
+        <!-- Main Content Area -->
+        <section class="content">
+            <h2>Main Content</h2>
+            <p>This is the main content area where articles or posts are displayed.</p>
+
+            <!-- Grid layout for content cards -->
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some description about card 1.</p>
+                </div>
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some description about card 2.</p>
+                </div>
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some description about card 3.</p>
+                </div>
+                <div class="card">
+                    <h3>Card 4</h3>
+                    <p>Some description about card 4.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Footer &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
